@@ -9,7 +9,7 @@ var emp=[{
     "IDemp":2,
     "Name":"นายจุ๊กกรู๊ว จุ๊กจุ๊ก",
     "Dept":"IT",
-    "Position":"System Engineer",
+    "Position":"System Enginer",
     "salaryRate":33000,
     "Bonus":"A",
 },{
@@ -56,7 +56,7 @@ var emp=[{
     "Bonus":"C",
 },{
     "IDemp":9,
-    "Name":"นางสาวร้อยคู่ หกหู่หัวใจ",
+    "Name":"นางสาวร้อยคู่ หดหู่หัวใจ ",
     "Dept":"IT",
     "Position":"System Account",
     "salaryRate":20000,

@@ -22,57 +22,103 @@
 </head>
 
 <body>
-    <div class="container">
-        <form id="myForm">
-            <div class="row">
-                <div class="col-5"><label>MovieName</label>
-                    <input type="text" id="MovieName" class="form-control">
-                </div>
-                <div class="col-5"><label>MovieLength</label>
-                    <input type="text" id="MovieLength" class="form-control">
-                </div>
-                <div class="row">
-                    <label>Driector</label>
-                    <input type="text" id="Driector" class="form-control">
-                </div>
-                <div class="col-5"><label>Category</label>
-                    <input type="text" id="Category" class="form-control">
-                </div>
-                <div class="col-5"><label>Picture</label>
-                    <input type="text" id="Picture" class="form-control">
-                </div>
-                <div class="col-5"><label>Trailer</label>
-                    <input type="text" id="Trailer" class="form-control">
-                </div>
-                <div class="col-5"><label>Review</label>
-                    <input type="text" id="Review" class="form-control">
-                </div>
-                <div class="col-5"><label>Score</label>
-                    <input type="text" id="Score" class="form-control">
-                </div>
-                <div class="col-5"><label>ScreenPlay</label>
-                    <input type="text" id="ScreenPlay" class="form-control">
-                </div>
-                <div class="col-5"><label>Playing</label>
-                    <input type="text" id="Playing" class="form-control">
-                </div>
-                <div class="col-5"><label>Music</label>
-                    <input type="text" id="Music" class="form-control">
-                </div>
-                <div class="col-5"><label>ActorSkills</label>
-                    <input type="text" id="ActorSkills" class="form-control">
-                </div>
-                <div class="col-5"><label>Graphics</label>
-                    <input type="text" id="Graphics" class="form-control">
-                </div>
-                <div class="col-5"><label>Average</label>
-                    <input type="text" id="Average" class="form-control">
-                </div>
-
-            </div>
-
-        </form>
-    </div>
+    <form id="myForm">
+     <div class="row" style="text-align:center; font-size: 19px;">
+         <div class="col-8"><br>
+             <label> ชื่อหนัง </label>
+             <input type="text" id="movieName" class="form-control" style="background-color: #416159; color: white;"  >
+         </div>
+         <div class="col-4"><br>
+             <label> ความยาวหนัง </label>
+             <input type="number" id="movieLength" class="form-control" style="background-color: #416159; color: white;"> 
+         </div>
+         <div class="col-7"><br>
+             <label> ผู้กำกับ </label>
+             <input type="text" id="director" class="form-control" style="background-color: #416159; color: white;">
+         </div>
+         <div class="col-5"><br>
+             <label> หมวดหมู่หนัง </label>
+             <input type="text" id="category" class="form-control" style="background-color: #416159; color: white;">
+         </div>
+         <div class="col-6"><br>
+             <label> URL รูปภาพ </label>
+             <input type="text" id="picture" class="form-control" style="background-color: #416159; color: white;">
+         </div>
+         <div class="col-6"><br>
+             <label> URL ตัวอย่างหนัง(Youtube) </label>
+             <input type="text" id="trailer" class="form-control" style="background-color: #416159; color: white;">
+         </div>
+         <div class="col-12"><br>
+             <label> ประวัติย่อ </label>
+             <textarea type="text" id="review" class="form-control" rows="12" style="background-color: #416159; color: white;"></textarea>
+         </div>
+ 
+         <div class="col-3"><br>
+             <label> บทหนัง </label>
+             <input type="number" id="screenPlay" class="form-control" style="background-color: #416159; color: white;"></textarea>
+         </div>
+         <div class="col-2"><br>
+             <label> การดำเนินเรื่อง </label>
+             <input type="number" id="playing" class="form-control" style="background-color: #416159; color: white;"></textarea>
+         </div>
+         <div class="col-2"><br>
+             <label> ดนตรีประกอบ </label>
+             <input type="number" id="music" class="form-control" style="background-color: #416159; color: white;"></textarea>
+         </div>
+         <div class="col-2"><br>
+             <label> ฝีมือนักแสดง </label>
+             <input type="number" id="actorSkills" class="form-control" style="background-color: #416159; color: white;"></textarea>
+         </div>
+         <div class="col-3"><br>
+             <label> กราฟฟิก </label>
+             <input type="number" id="graphics" class="form-control" style="background-color: #416159; color: white;"></textarea>
+         </div> 
+       </div>
+       <br><br><br><br>
+     
+       <div class="row">
+         <div class="col" style="text-align: center;">
+             <input type="button" value="AddMovie" class="btn" onclick="AddMovie()" style="background-color: rgb(255, 52, 52); color: white;">
+         </div>
+     </div>
+    </form>
+ 
+ 
+ 
+     <script>
+         function AddMovie(){ 
+         let obj ={
+             "id":'',
+             "movieName": document.forms['myForm']['movieName'].value,
+             "movieLength": document.forms['myForm']['movieLength'].value,
+             "director": document.forms['myForm']['director'].value,
+             "category": document.forms['myForm']['category'].value,
+             "picture": document.forms['myForm']['picture'].value,
+             "trailer": document.forms['myForm']['trailer'].value,
+             "review": {
+                 "review": document.forms['myForm']['review'].value,
+                 "score": {
+                     "screenPlay": Number(document.forms['myForm']['screenPlay'].value),
+                     "playing": Number(document.forms['myForm']['screenPlay'].value),
+                     "music": Number(document.forms['myForm']['screenPlay'].value),
+                     "actorSkills": Number(document.forms['myForm']['screenPlay'].value),
+                     "graphics": Number(document.forms['myForm']['screenPlay'].value),
+                     "average": null
+                          }
+                      }
+                 }
+                 obj.review.score.average = (obj.review.score.screenPlay + obj.review.score.playing + obj.review.score.music + obj.review.score.graphics) /5;
+             console.log(obj);
+ 
+             let text = JSON.stringify(obj);
+             console.log("Text",text);
+ 
+             let xhr = new XMLHttpRequest();
+             xhr.open("POST","http://localhost:3000/movieReview");
+             xhr.setRequestHeader("Content-Type","application/json")
+             xhr.send(text);
+             }
+     </script>
 
 </body>
 

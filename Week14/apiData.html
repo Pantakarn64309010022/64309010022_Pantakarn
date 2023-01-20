@@ -28,23 +28,23 @@
         google.charts.setOnLoadCallback(drawMap)
 
         function drawMap() {
-            var road = [];
-            road[0] = [' ','ความยาวทั้งหมด']
-            fetch("http://localhost:3000/records")
-                .then((res) => res.json())
-                .then((data) => {
-                    console.log(data);
-                    for (i = 1; i < 4; i++) {
-                        road[i] = [data[i][10],data[i][1]];
-                    }
-                    var data = google.visualization.arrayToDataTable(road);
-                    var options = {
-                        
-                    }
-                    var chart = new google.charts.Bar(document.getElementById('display'));
-                    chart.draw(data, options);
-                });
-        }
+                var road = [];
+                road[0] = [' ','ความยาวทั้งหมด']
+                fetch("http://localhost:3000/records")
+                    .then((res) => res.json())
+                    .then((data) => {
+                        console.log(data);
+                        for (i = 1; i < 10; i++) {
+                            road[i] = [data[i][10],data[i][1]];
+                        }
+                        var data = google.visualization.arrayToDataTable(road);
+                        var options = {
+                            
+                        }
+                        var chart = new google.charts.Bar(document.getElementById('display'));
+                        chart.draw(data, options);
+                    });
+            }
 
 
     </script>
